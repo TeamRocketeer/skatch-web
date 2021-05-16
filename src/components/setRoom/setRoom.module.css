@@ -1,0 +1,7 @@
+.setRoom {
+    display: flex;
+}
+
+.round, .time {
+    list-style: none;
+}

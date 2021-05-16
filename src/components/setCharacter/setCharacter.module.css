@@ -1,0 +1,7 @@
+.setCharacter {
+    display: flex;
+}
+
+.character {
+    list-style: none;
+}

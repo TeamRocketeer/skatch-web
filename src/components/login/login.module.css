@@ -1,0 +1,12 @@
+.login_box {
+    width: 100%;
+    display: flex;
+}
+.input {
+    display: flex;
+    flex-direction: column;
+}
+
+.SignUp_Box {
+    width: 100%;
+}

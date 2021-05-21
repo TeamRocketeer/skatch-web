@@ -1,4 +1,23 @@
+.main {
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .button_box {
     display: flex;
     flex-direction: column;
+}
+.button {
+    width: 30rem;
+    height: 2rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+.login {
+    position: absolute;
+    right: 10rem;
+    top: 10rem;
+    font-size: 1.5rem;
 }

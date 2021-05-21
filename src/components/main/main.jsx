@@ -26,11 +26,11 @@ const Main = () => {
     <div className={styles.main}>
       <SetCharacter />
       <div className={styles.button_box}>
-        <button type="button" onClick={goToPrivateRoom}>초대받은 링크로 입장</button>
-        <button type="button" onClick={handleCreateRoom}>방 만들기</button>
-        <button type="button" onClick={goToRandomPlay}>랜덤 플레이 하기</button>
+        <button type="button" className={styles.button} onClick={goToPrivateRoom}>초대받은 링크로 입장</button>
+        <button type="button" className={styles.button} onClick={handleCreateRoom}>방 만들기</button>
+        <button type="button" className={styles.button} onClick={goToRandomPlay}>랜덤 플레이 하기</button>
       </div>
-      <button type="button" onClick={goToLogin}>Login</button>
+      <button type="button" className={styles.login} onClick={goToLogin}>Login</button>
     </div>
   );
 };

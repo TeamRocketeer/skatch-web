@@ -1,5 +1,13 @@
 .setRoom {
     display: flex;
+    justify-content: center;
+}
+.roomList {
+    display: flex;
+    justify-content: center;
+}
+.btn {
+    margin-right: 1rem;
 }
 
 .round, .time {

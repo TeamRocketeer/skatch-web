@@ -1,46 +1,58 @@
-import React, { useRef } from 'react';
+import React from 'react';
+import {
+  Button, Form, Grid, Header, Message, Segment,
+} from 'semantic-ui-react';
 import { useHistory } from 'react-router-dom';
-import styles from './login.module.css';
 
 const Login = () => {
   const history = useHistory();
-  const inputRef = useRef();
 
-  const handleLogin = (event) => {
-    event.preventDefault();
+  const goToPlay = (event) => {
+    console.log(event);
     history.push('/user/login/set');
   };
-  const goToSignup = () => {
+  const goToSignUp = (event) => {
+    console.log(event);
     history.push('/signup');
   };
-  const handleOnChange = (event) => {
-    event.preventDefault();
-  };
   return (
-    <div className={styles.login}>
-      <h1 className={styles.title}> Play Skatch !</h1>
-      <form ref={inputRef} className={styles.login_box}>
-        <div className={styles.input}>
-          <input
-            type="text"
-            placeholder="User Id"
-            name="id"
-            onChange={handleOnChange}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            onChange={handleOnChange}
-          />
-        </div>
-        <button type="submit" onClick={handleLogin}>Login</button>
-      </form>
-      <div className={styles.SignUp_Box}>
-        <span>If you dont have account, please sign up</span>
-        <button type="button" onClick={goToSignup}>here</button>
-      </div>
-    </div>
+    <Grid textAlign="center" style={{ height: '100vh' }} verticalAlign="middle">
+      <Grid.Column style={{
+        maxWidth: '50rem',
+        width: '30rem',
+        backgroundColor: 'whitesmoke',
+        padding: 0,
+        margin: '1rem',
+      }}
+      >
+        <Header as="h1" color="teal" textAlign="center" style={{ margin: '0', padding: '0.5rem 0' }}>
+          {' '}
+          여기서 로그인해라
+        </Header>
+        <Form size="large">
+          <Segment stacked>
+            <Form.Input fluid icon="user" iconPosition="left" placeholder="User ID" />
+            <Form.Input
+              fluid
+              icon="lock"
+              iconPosition="left"
+              placeholder="Password"
+              type="password"
+            />
+
+            <Button color="teal" fluid size="large" onClick={goToPlay}>
+              Login
+            </Button>
+          </Segment>
+        </Form>
+        <Message>
+          처음이세연?
+          {' '}
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+          <a href="#" onClick={goToSignUp}>회원가입</a>
+        </Message>
+      </Grid.Column>
+    </Grid>
   );
 };
 

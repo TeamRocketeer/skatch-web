@@ -1,3 +1,4 @@
+@value makerGrey from '/src/common/colors.css';
 * {
   box-sizing: border-box;
 }
@@ -11,4 +12,5 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: makerGrey;
 }

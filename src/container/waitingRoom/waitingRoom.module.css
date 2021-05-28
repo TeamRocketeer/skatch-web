@@ -1,0 +1,30 @@
+.waiting_total {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    background-color: darkgrey;
+    padding: 2rem;
+}
+.waiting_left {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    background-color: whitesmoke;
+    padding: 2rem;
+}
+.buttons {
+    width: 100%;
+}
+.button {
+    height: 3rem;
+}
+.waiting_chat {
+    height: 40rem;
+    width: 25rem;
+}
+
+.link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

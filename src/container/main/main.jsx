@@ -3,15 +3,18 @@ import { useHistory } from 'react-router-dom';
 import {
   Button, Form, Grid, Icon,
 } from 'semantic-ui-react';
+import { useRecoilState } from 'recoil';
 import styles from './main.module.css';
+import { roomState } from '../../atom/room';
 
 const Main = () => {
   const history = useHistory();
+  const [room, setRoom] = useRecoilState(roomState);
 
-  const goToPrivateRoom = () => {
-    history.push('/users/private');
-    console.log('초대받은 링크로 방을 접속함~');
-  };
+  // const goToPrivateRoom = () => {
+  //   history.push('/users/private');
+  //   console.log('초대받은 링크로 방을 접속함~');
+  // };
 
   const handleCreateRoom = () => {
     history.push('/users/play');
@@ -48,29 +51,38 @@ const Main = () => {
           </Form.Group>
           <Button animated="fade" style={{ marginBottom: '1rem' }}>
             <Button.Content visible verticalAlign="middle" style={{ width: '33rem' }}>이걸로 확인 버튼 ㄱㄱ</Button.Content>
-            <Button.Content hidden>응 조까~</Button.Content>
+            <Button.Content hidden>변경 완료!</Button.Content>
           </Button>
         </Form>
-        <div className={styles.buttons}>
-          <Button animated color="teal" type="button" className={styles.button} onClick={goToPrivateRoom}>
-            <Button.Content visible>초대받은 링크로 입장</Button.Content>
-            <Button.Content hidden>
-              <Icon style={{ marginBottom: '1rem' }} size="large" name="mail" />
-            </Button.Content>
-          </Button>
-          <Button animated color="grey" type="button" className={styles.button} onClick={handleCreateRoom}>
-            <Button.Content visible>방 만들기</Button.Content>
-            <Button.Content hidden verticalAlign="middle">
-              <Icon style={{ marginBottom: '1rem' }} size="large" name="home" />
-            </Button.Content>
-          </Button>
-          <Button animated color="teal" type="button" className={styles.button} onClick={goToRandomPlay}>
-            <Button.Content visible>랜덤 플레이하기</Button.Content>
-            <Button.Content hidden>
-              <Icon style={{ marginBottom: '1rem' }} size="large" name="random" />
-            </Button.Content>
-          </Button>
-        </div>
+        {room ? null
+          : (
+            <div className={styles.buttons}>
+              <Button animated color="teal" type="button" className={styles.button} onClick={() => setRoom('1CY7Q')}>
+                <Button.Content visible>초대받은 링크로 입장</Button.Content>
+                <Button.Content hidden>
+                  <Icon style={{ marginBottom: '1rem' }} size="large" name="mail" />
+                </Button.Content>
+              </Button>
+              <Button
+                animated="vertical"
+                color="grey"
+                type="button"
+                className={styles.button}
+                onClick={handleCreateRoom}
+              >
+                <Button.Content visible>방 만들기</Button.Content>
+                <Button.Content hidden verticalAlign="middle">
+                  <Icon style={{ marginBottom: '1rem' }} size="large" name="home" />
+                </Button.Content>
+              </Button>
+              <Button animated color="teal" type="button" className={styles.button} onClick={goToRandomPlay}>
+                <Button.Content visible>랜덤 플레이하기</Button.Content>
+                <Button.Content hidden>
+                  <Icon style={{ marginBottom: '1rem' }} size="large" name="random" />
+                </Button.Content>
+              </Button>
+            </div>
+          )}
       </Grid.Column>
       <Button type="button" className={styles.login} onClick={goToLogin}>Login</Button>
     </div>

@@ -1,35 +1,38 @@
 import React from 'react';
+import { Input } from 'semantic-ui-react';
 import styles from './setRoom.module.css';
 
-const SetRoom = () => {
-  const handleEditOption = (event) => {
-    console.log(event);
-  };
-  return (
+const SetRoom = () => (
+  <>
+
     <div className={styles.setRoom}>
-      <ul className={styles.roomList}>
-        <li className={styles.round}>Round</li>
-        <input
-          className={styles.btn}
-          type="number"
-          name="round"
-          min="1"
-          max="5"
-          value="3"
-        />
-        <li className={styles.time}>Time</li>
-        <input
-          className={styles.btn}
-          type="number"
-          min="10"
-          name="time"
-          max="100"
-          value="10"
-        />
-      </ul>
-      <button className={styles.edit_btn} type="button" onClick={handleEditOption}>edit</button>
+      <Input
+        type="number"
+        action={{ icon: 'check' }}
+        label="Round"
+        name="round"
+        min="1"
+        max="5"
+        style={{
+          fontSize: '1.5rem',
+          height: '3em',
+        }}
+      />
+      <Input
+        type="number"
+        action={{ icon: 'check' }}
+        label="Time"
+        name="time"
+        min="30"
+        max="60"
+        step="10"
+        style={{
+          fontSize: '1.5rem',
+          height: '3em',
+        }}
+      />
     </div>
-  );
-};
+  </>
+);
 
 export default SetRoom;

@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Button, Form, Grid, Header, Message, Segment,
+  Button, Form, Grid, Header, Image, Message, Segment,
 } from 'semantic-ui-react';
 import { useHistory } from 'react-router-dom';
 
@@ -25,6 +25,7 @@ const Login = () => {
         margin: '1rem',
       }}
       >
+        <Image src="/images/logo.png" centered />
         <Header as="h1" color="teal" textAlign="center" style={{ margin: '0', padding: '0.5rem 0' }}>
           {' '}
           여기서 로그인해라

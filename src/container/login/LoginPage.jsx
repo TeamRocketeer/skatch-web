@@ -4,14 +4,14 @@ import {
 } from 'semantic-ui-react';
 import { useHistory } from 'react-router-dom';
 
-const Login = () => {
+const LoginPage = () => {
   const history = useHistory();
 
-  const goToPlay = (event) => {
+  const handlePlay = (event) => {
     console.log(event);
-    history.push('/user/login/set');
+    history.push('/playerCard/login/set');
   };
-  const goToSignUp = (event) => {
+  const handleSignUp = (event) => {
     console.log(event);
     history.push('/signup');
   };
@@ -32,7 +32,7 @@ const Login = () => {
         </Header>
         <Form size="large">
           <Segment stacked>
-            <Form.Input fluid icon="user" iconPosition="left" placeholder="User ID" />
+            <Form.Input fluid icon="user" iconPosition="left" placeholder="PlayerCardComponent ID" />
             <Form.Input
               fluid
               icon="lock"
@@ -41,7 +41,7 @@ const Login = () => {
               type="password"
             />
 
-            <Button color="teal" fluid size="large" onClick={goToPlay}>
+            <Button color="teal" fluid size="large" onClick={handlePlay}>
               Login
             </Button>
           </Segment>
@@ -50,11 +50,11 @@ const Login = () => {
           처음이세연?
           {' '}
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-          <a href="#" onClick={goToSignUp}>회원가입</a>
+          <a href="#" onClick={handleSignUp}>회원가입</a>
         </Message>
       </Grid.Column>
     </Grid>
   );
 };
 
-export default Login;
+export default LoginPage;

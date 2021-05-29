@@ -1,13 +1,14 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import {
-  Button, Form, Grid, Icon,
+  Button, Grid, Icon,
 } from 'semantic-ui-react';
 import { useRecoilState } from 'recoil';
-import styles from './main.module.css';
+import styles from './mainPage.module.css';
 import { roomState } from '../../atom/room';
+import SetPlayerInfo from '../../components/setPlayerInfo/setPlayerInfo';
 
-const Main = () => {
+const MainPage = () => {
   const history = useHistory();
   const [room, setRoom] = useRecoilState(roomState);
 
@@ -20,12 +21,12 @@ const Main = () => {
     history.push('/users/play');
     console.log('새로운 방 생성됨');
   };
-  const goToRandomPlay = () => {
+  const handleRandomPlay = () => {
     history.push('/users/random');
     console.log('랜덤 플레이 입장했음~');
   };
-  const goToLogin = () => {
-    history.push('/user/login');
+  const handleLogin = () => {
+    history.push('/playerCard/login');
   };
   return (
     <div className={styles.main}>
@@ -37,23 +38,7 @@ const Main = () => {
         margin: '1rem',
       }}
       >
-        <Form>
-          <Form.Group widths="equal">
-            <Form.Input fluid label="닉네임" placeholder="꼴리는거 쓰셈" />
-            <Form.Field label="캐릭터 선택" control="select">
-              <option defaultValue="character">--------------------------</option>
-              <option value="ryu">조뀨</option>
-              <option value="park">조툰</option>
-              <option value="hyuk">조텩</option>
-              <option value="moon">조텬</option>
-              <option value="hank">조껼</option>
-            </Form.Field>
-          </Form.Group>
-          <Button animated="fade" style={{ marginBottom: '1rem' }}>
-            <Button.Content visible verticalAlign="middle" style={{ width: '33rem' }}>이걸로 확인 버튼 ㄱㄱ</Button.Content>
-            <Button.Content hidden>변경 완료!</Button.Content>
-          </Button>
-        </Form>
+        <SetPlayerInfo />
         {room ? null
           : (
             <div className={styles.buttons}>
@@ -75,7 +60,7 @@ const Main = () => {
                   <Icon style={{ marginBottom: '1rem' }} size="large" name="home" />
                 </Button.Content>
               </Button>
-              <Button animated color="teal" type="button" className={styles.button} onClick={goToRandomPlay}>
+              <Button animated color="teal" type="button" className={styles.button} onClick={handleRandomPlay}>
                 <Button.Content visible>랜덤 플레이하기</Button.Content>
                 <Button.Content hidden>
                   <Icon style={{ marginBottom: '1rem' }} size="large" name="random" />
@@ -84,9 +69,9 @@ const Main = () => {
             </div>
           )}
       </Grid.Column>
-      <Button type="button" className={styles.login} onClick={goToLogin}>Login</Button>
+      <Button type="button" className={styles.login} onClick={handleLogin}>Login</Button>
     </div>
   );
 };
 
-export default Main;
+export default MainPage;

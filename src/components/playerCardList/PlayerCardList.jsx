@@ -1,10 +1,10 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
-import styles from './userList.module.css';
-import User from '../user/user';
+import styles from './PlayerCardList.module.css';
+import PlayerCardComponent from '../playerCard/playerCardComponent';
 
 // eslint-disable-next-line react/prop-types
-const UserList = ({ userList }) => (
+const PlayerCardList = ({ userList }) => (
   <section className={styles.user_list}>
     <Grid columns={3}>
       <Grid.Row>
@@ -12,7 +12,7 @@ const UserList = ({ userList }) => (
           // eslint-disable-next-line react/prop-types
           userList.map((user) => (
             <Grid.Column style={{ marginBottom: '1rem', padding: '0 1rem 0 0' }}>
-              <User user={user} />
+              <PlayerCardComponent user={user} />
             </Grid.Column>
           ))
         }
@@ -21,4 +21,4 @@ const UserList = ({ userList }) => (
   </section>
 );
 
-export default UserList;
+export default PlayerCardList;

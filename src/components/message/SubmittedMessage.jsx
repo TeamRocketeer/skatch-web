@@ -2,7 +2,7 @@ import React from 'react';
 import { Comment } from 'semantic-ui-react';
 
 // eslint-disable-next-line react/prop-types
-const Message = ({ message }) => {
+const SubmittedMessage = ({ message }) => {
   // eslint-disable-next-line react/prop-types
   const { nickName, img, text } = message;
   return (
@@ -18,4 +18,4 @@ const Message = ({ message }) => {
   );
 };
 
-export default Message;
+export default SubmittedMessage;

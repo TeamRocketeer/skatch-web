@@ -7,8 +7,8 @@
     width: 15rem;
 }
 .login {
-    position: absolute;
-    right: 10rem;
-    top: 10rem;
+    position: relative;
+    bottom: 27rem;
+    left: 37rem;
     font-size: 1.5rem;
 }

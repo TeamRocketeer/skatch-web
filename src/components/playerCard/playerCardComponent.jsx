@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Image } from 'semantic-ui-react';
 
 // eslint-disable-next-line react/prop-types
-const User = ({ user }) => {
+const PlayerCardComponent = ({ user }) => {
   // eslint-disable-next-line react/prop-types
   const { nickName, img } = user;
   return (
@@ -15,4 +15,4 @@ const User = ({ user }) => {
   );
 };
 
-export default User;
+export default PlayerCardComponent;

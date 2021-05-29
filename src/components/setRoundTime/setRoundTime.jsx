@@ -1,10 +1,9 @@
 import React from 'react';
 import { Input } from 'semantic-ui-react';
-import styles from './setRoom.module.css';
+import styles from './setRoundTime.module.css';
 
-const SetRoom = () => (
+const SetRoundTime = () => (
   <>
-
     <div className={styles.setRoom}>
       <Input
         type="number"
@@ -35,4 +34,4 @@ const SetRoom = () => (
   </>
 );
 
-export default SetRoom;
+export default SetRoundTime;

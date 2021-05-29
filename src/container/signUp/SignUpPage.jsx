@@ -4,11 +4,11 @@ import {
   Button, Form, Grid, Header, Message, Segment,
 } from 'semantic-ui-react';
 
-const SignUp = () => {
+const SignUpPage = () => {
   const history = useHistory();
 
-  const goToLogin = () => {
-    history.replace('/user/login');
+  const handleLogin = () => {
+    history.replace('/playerCard/login');
   };
   return (
     <Grid textAlign="center" style={{ height: '100vh' }} verticalAlign="middle">
@@ -27,7 +27,7 @@ const SignUp = () => {
         <Form success size="large">
           <Segment stacked>
 
-            <Form.Input required icon="user" iconPosition="left" placeholder="User ID" />
+            <Form.Input required icon="user" iconPosition="left" placeholder="PlayerCardComponent ID" />
             <Form.Input
               fluid
               icon="lock"
@@ -52,11 +52,11 @@ const SignUp = () => {
           이미 아이디 있으세연?
           {' '}
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-          <a href="#" onClick={goToLogin}>로그인</a>
+          <a href="#" onClick={handleLogin}>로그인</a>
         </Message>
       </Grid.Column>
     </Grid>
   );
 };
 
-export default SignUp;
+export default SignUpPage;

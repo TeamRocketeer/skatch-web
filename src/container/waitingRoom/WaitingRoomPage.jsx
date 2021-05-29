@@ -3,12 +3,12 @@ import { useHistory } from 'react-router-dom';
 import {
   Button, Icon, Segment,
 } from 'semantic-ui-react';
-import Chat from '../../components/chat/chat';
-import SetRoom from '../../components/setRoom/setRoom';
-import UserList from '../../components/userList/userList';
-import styles from './waitingRoom.module.css';
+import ChatInWaitingRoom from '../../components/chatBox/InWaitingRoom/chatInWaitingRoom';
+import SetRoundTime from '../../components/setRoundTime/setRoundTime';
+import PlayerCardList from '../../components/playerCardList/PlayerCardList';
+import styles from './waitingRoomPage.module.css';
 
-const WaitingRoom = () => {
+const WaitingRoomPage = () => {
   const history = useHistory();
   const userList = [
     {
@@ -43,16 +43,16 @@ const WaitingRoom = () => {
     },
   ];
 
-  const goToPlay = () => {
+  const handlePlay = () => {
     history.push('/users/play');
   };
 
   return (
     <div className={styles.waiting_total}>
       <section className={styles.waiting_left}>
-        <SetRoom />
-        <UserList userList={userList} key={userList.id} />
-        <Button animated color="teal" type="button" className={styles.button} onClick={goToPlay}>
+        <SetRoundTime />
+        <PlayerCardList userList={userList} key={userList.id} />
+        <Button animated color="teal" type="button" className={styles.button} onClick={handlePlay}>
           <Button.Content visible style={{ fontSize: '1.5rem' }}>Start Play</Button.Content>
           <Button.Content hidden style={{ height: ' 100%' }}>
             <Icon style={{ marginBottom: '0' }} size="large" name="angle double right" />
@@ -69,10 +69,10 @@ const WaitingRoom = () => {
         </Segment>
       </section>
       <section className={styles.waiting_chat}>
-        <Chat />
+        <ChatInWaitingRoom />
       </section>
     </div>
   );
 };
 
-export default WaitingRoom;
+export default WaitingRoomPage;

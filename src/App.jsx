@@ -6,10 +6,10 @@ import {
 } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 import styles from './App.module.css';
-import Login from './container/login/login';
-import SignUP from './container/signUp/signUp';
-import Main from './container/main/main';
-import WaitingRoom from './container/waitingRoom/waitingRoom';
+import LoginPage from './container/login/LoginPage';
+import SignUpPage from './container/signUp/SignUpPage';
+import MainPage from './container/main/MainPage';
+import WaitingRoomPage from './container/waitingRoom/WaitingRoomPage';
 
 function App() {
   return (
@@ -17,17 +17,17 @@ function App() {
       <div className={styles.app}>
         <Router>
           <Switch>
-            <Route exact path={['/', '/user/login/set']}>
-              <Main />
+            <Route exact path={['/', '/playerCard/login/set']}>
+              <MainPage />
             </Route>
-            <Route exact path={['/', '/user/login']}>
-              <Login />
+            <Route exact path={['/', '/playerCard/login']}>
+              <LoginPage />
             </Route>
             <Route path="/signup">
-              <SignUP />
+              <SignUpPage />
             </Route>
             <Route path={['/users/play', '/users/private']}>
-              <WaitingRoom />
+              <WaitingRoomPage />
             </Route>
           </Switch>
         </Router>

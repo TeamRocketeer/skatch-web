@@ -1,0 +1,14 @@
+
+.choose {
+    width: 5rem;
+    margin-right: 2rem;
+}
+.character {
+    list-style: none;
+}
+.nickname {
+    display: flex;
+}
+.nickname_btn {
+    width: 3rem;
+}

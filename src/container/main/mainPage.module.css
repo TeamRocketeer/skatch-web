@@ -1,0 +1,14 @@
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+.button {
+    width: 15rem;
+}
+.login {
+    position: relative;
+    bottom: 27rem;
+    left: 37rem;
+    font-size: 1.5rem;
+}

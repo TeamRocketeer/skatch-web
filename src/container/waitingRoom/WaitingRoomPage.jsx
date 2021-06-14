@@ -7,52 +7,24 @@ import ChatInWaitingRoom from '../../components/chatBox/InWaitingRoom/chatInWait
 import SetRoundTime from '../../components/setRoundTime/setRoundTime';
 import PlayerCardList from '../../components/playerCardList/PlayerCardList';
 import styles from './waitingRoomPage.module.css';
+import { userList } from '../../static/dummyData';
 
 const WaitingRoomPage = () => {
   const history = useHistory();
-  const userList = [
-    {
-      id: 0,
-      character: 1,
-      nickName: '성훈',
-      img: '/images/logo.png',
-    },
-    {
-      id: 1,
-      character: 2,
-      nickName: '남규',
-      img: '/images/namq.jpg',
-    },
-    {
-      id: 2,
-      character: 3,
-      nickName: '신혁',
-      img: '/images/hyuk.jpg',
-    },
-    {
-      id: 3,
-      character: 4,
-      nickName: '보현',
-      img: '/images/bose.jpg',
-    },
-    {
-      id: 4,
-      character: 5,
-      nickName: '한결',
-      img: '/images/gyeol.jpg',
-    },
-  ];
 
-  const handlePlay = () => {
-    history.push('/users/play');
+  const handlePlay = (players) => {
+    console.log({ userList: players });
+    history.push({
+      pathname: '/users/play',
+      state: { userList: players },
+    });
   };
-
   return (
     <div className={styles.waiting_total}>
       <section className={styles.waiting_left}>
         <SetRoundTime />
         <PlayerCardList userList={userList} key={userList.id} />
-        <Button animated color="teal" type="button" className={styles.button} onClick={handlePlay}>
+        <Button animated color="teal" type="button" className={styles.button} onClick={() => handlePlay(userList)}>
           <Button.Content visible style={{ fontSize: '1.5rem' }}>Start Play</Button.Content>
           <Button.Content hidden style={{ height: ' 100%' }}>
             <Icon style={{ marginBottom: '0' }} size="large" name="angle double right" />

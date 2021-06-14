@@ -5,11 +5,11 @@ import {
 import styles from './chatInWaitingRoom.module.css';
 
 import MessageList from '../../messageList/messageList';
-import exMessage from '../../../example';
+import { dummyChats } from '../../../static/dummyData';
 // eslint-disable-next-line import/extensions,import/no-absolute-path
 
 const ChatInWaitingRoom = () => {
-  const [messageList, setMessageList] = useState(exMessage);
+  const [messageList, setMessageList] = useState(dummyChats);
   const inputRef = useRef();
 
   const [message, setMessage] = useState('');
@@ -36,15 +36,14 @@ const ChatInWaitingRoom = () => {
       <div className={styles.message_form}>
 
         <MessageList messageList={messageList} />
-
-        <form style={{ top: '17rem' }} onSubmit={handleSendMessage}>
+        <form style={{ top: '17rem', width: '100%' }} onSubmit={handleSendMessage}>
           <Input
             action={{ icon: 'paper plane' }}
             actionPosition="right"
             ref={inputRef}
             placeholder="메세지를 입력하세요"
             className={styles.chat_input}
-            style={{ width: '20rem', paddingRight: '0' }}
+            style={{ width: '100%', paddingRight: '0' }}
             onChange={handleOnChange}
             value={message || ''}
           />

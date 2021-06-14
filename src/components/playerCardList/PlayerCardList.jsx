@@ -6,7 +6,7 @@ import PlayerCardComponent from '../playerCard/playerCardComponent';
 // eslint-disable-next-line react/prop-types
 const PlayerCardList = ({ userList }) => (
   <section className={styles.user_list}>
-    <Grid columns={3}>
+    <Grid columns={4}>
       <Grid.Row>
         {
           // eslint-disable-next-line react/prop-types

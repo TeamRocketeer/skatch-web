@@ -14,3 +14,14 @@ html {
   align-items: center;
   background-color: makerGrey;
 }
+
+.home {
+  list-style: none;
+  background-color: darksalmon;
+  color: black;
+  text-decoration: none;
+}
+.home:hover {
+  color: white;
+  opacity: 0.6;
+}

@@ -1,16 +1,13 @@
 import React from 'react';
 import {
-  Button, Form, Grid, Header, Image, Message, Segment,
+  Button, Form, Grid, Header, Icon, Message, Segment,
 } from 'semantic-ui-react';
 import { useHistory } from 'react-router-dom';
 
-const LoginPage = () => {
+// eslint-disable-next-line react/prop-types
+const LoginPage = ({ handleLogin }) => {
   const history = useHistory();
 
-  const handlePlay = (event) => {
-    console.log(event);
-    history.push('/playerCard/login/set');
-  };
   const handleSignUp = (event) => {
     console.log(event);
     history.push('/signup');
@@ -25,10 +22,10 @@ const LoginPage = () => {
         margin: '1rem',
       }}
       >
-        <Image src="/images/logo.png" centered />
+        <Icon name="pencil" size="huge" style={{ margin: '0.5rem 0' }} />
         <Header as="h1" color="teal" textAlign="center" style={{ margin: '0', padding: '0.5rem 0' }}>
           {' '}
-          여기서 로그인해라
+          Sign in Skatch here!
         </Header>
         <Form size="large">
           <Segment stacked>
@@ -41,13 +38,13 @@ const LoginPage = () => {
               type="password"
             />
 
-            <Button color="teal" fluid size="large" onClick={handlePlay}>
+            <Button color="teal" fluid size="large" onClick={handleLogin}>
               Login
             </Button>
           </Segment>
         </Form>
         <Message>
-          처음이세연?
+          처음이신가요?
           {' '}
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <a href="#" onClick={handleSignUp}>회원가입</a>

@@ -49,8 +49,7 @@ const SignUpPage = () => {
         </Form>
 
         <Message>
-          이미 아이디 있으세연?
-          {' '}
+          이미 아이디 있으신가요?
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <a href="#" onClick={handleLogin}>로그인</a>
         </Message>

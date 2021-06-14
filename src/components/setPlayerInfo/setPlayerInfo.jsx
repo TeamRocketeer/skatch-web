@@ -1,11 +1,11 @@
 import React from 'react';
-import { Button, Form } from 'semantic-ui-react';
+import { Form } from 'semantic-ui-react';
 
 const SetPlayerInfo = () => (
   <Form>
     <Form.Group widths="equal">
-      <Form.Input fluid label="닉네임" placeholder="꼴리는거 쓰셈" />
-      <Form.Field label="캐릭터 선택" control="select">
+      <Form.Input style={{ height: '4rem', fontSize: '1.5rem' }} fluid label="닉네임" placeholder="닉네임을 입력하세요" />
+      <Form.Field style={{ height: '4rem', fontSize: '1.5rem' }} label="캐릭터 선택" control="select">
         <option defaultValue="character">--------------------------</option>
         <option value="ryu">남규</option>
         <option value="park">성훈</option>
@@ -14,10 +14,11 @@ const SetPlayerInfo = () => (
         <option value="hank">한결</option>
       </Form.Field>
     </Form.Group>
-    <Button animated="fade" style={{ marginBottom: '1rem' }}>
-      <Button.Content visible verticalAlign="middle" style={{ width: '33rem' }}>이걸로 확인 버튼 ㄱㄱ</Button.Content>
-      <Button.Content hidden>변경 완료!</Button.Content>
-    </Button>
+    {/* <Button animated="fade" style={{ marginBottom: '1rem', width: '100%' }}>
+      <Button.Content visible verticalAlign="middle" style={{ width: '100%', fontSize: '1.5rem' }}>
+      이걸로 확인 버튼 ㄱㄱ</Button.Content>
+      <Button.Content style={{ fontSize: '1.2rem' }} hidden>변경 완료!</Button.Content>
+    </Button> */}
   </Form>
 );
 

@@ -1,0 +1,9 @@
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.button {
+    width: 15rem;
+    height: 5rem;
+}

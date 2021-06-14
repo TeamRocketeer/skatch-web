@@ -10,8 +10,8 @@ const SubmittedMessage = ({ message }) => {
       <Comment>
         <Comment.Avatar src={img} />
         <Comment.Content>
-          <Comment.Author as="a">{nickName}</Comment.Author>
-          <Comment.Text>{text}</Comment.Text>
+          <Comment.Author as="a" style={{ fontWeight: 'border', fontSize: '1.2rem' }}>{nickName}</Comment.Author>
+          <Comment.Text style={{ fontSize: '1rem' }}>{text}</Comment.Text>
         </Comment.Content>
       </Comment>
     </li>

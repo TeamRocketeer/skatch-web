@@ -1,4 +1,4 @@
-const dummyChats = [
+const userList = [
   {
     id: 0,
     nickName: '성훈',
@@ -31,37 +31,4 @@ const dummyChats = [
   },
 ];
 
-const userList = [
-  {
-    id: 0,
-    character: 1,
-    nickName: '성훈',
-    img: '/images/logo.png',
-  },
-  {
-    id: 1,
-    character: 2,
-    nickName: '남규',
-    img: '/images/namq.jpg',
-  },
-  {
-    id: 2,
-    character: 3,
-    nickName: '신혁',
-    img: '/images/hyuk.jpg',
-  },
-  {
-    id: 3,
-    character: 4,
-    nickName: '보현',
-    img: '/images/bose.jpg',
-  },
-  {
-    id: 4,
-    character: 5,
-    nickName: '한결',
-    img: '/images/gyeol.jpg',
-  },
-];
-
-export { userList, dummyChats };
+export default userList;

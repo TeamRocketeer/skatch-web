@@ -7,7 +7,7 @@ import ChatInWaitingRoom from '../../components/chatBox/InWaitingRoom/chatInWait
 import SetRoundTime from '../../components/setRoundTime/setRoundTime';
 import PlayerCardList from '../../components/playerCardList/PlayerCardList';
 import styles from './waitingRoomPage.module.css';
-import { userList } from '../../static/dummyData';
+import userList from '../../static/dummyData';
 
 const WaitingRoomPage = () => {
   const history = useHistory();

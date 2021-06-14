@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,9 +11,11 @@ import SignUpPage from './container/signUp/SignUpPage';
 import MainPage from './container/main/MainPage';
 import WaitingRoomPage from './container/waitingRoom/WaitingRoomPage';
 import PlayRoomPage from './container/PlayRoom/PlayRoomPage';
-import { userList } from './static/dummyData';
+import userList from './static/dummyData';
 
 function App() {
+  // eslint-disable-next-line no-unused-vars
+  const [players, setPlayers] = useState(userList);
   return (
     <RecoilRoot>
       <div className={styles.app}>
@@ -21,7 +23,9 @@ function App() {
 
           <Switch>
             <Route exact path={['/', '/playerCard/login/set']}>
-              <MainPage />
+              <MainPage
+                players={players}
+              />
             </Route>
             <Route exact path="/playerCard/login">
               <LoginPage />
@@ -33,7 +37,7 @@ function App() {
               <WaitingRoomPage />
             </Route>
             <Route path={['/users/play']}>
-              <PlayRoomPage players={userList} />
+              <PlayRoomPage players={players} />
             </Route>
           </Switch>
         </Router>

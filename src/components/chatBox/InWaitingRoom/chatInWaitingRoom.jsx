@@ -5,11 +5,11 @@ import {
 import styles from './chatInWaitingRoom.module.css';
 
 import MessageList from '../../messageList/messageList';
-import { dummyChats } from '../../../static/dummyData';
+import userList from '../../../static/dummyData';
 // eslint-disable-next-line import/extensions,import/no-absolute-path
 
 const ChatInWaitingRoom = () => {
-  const [messageList, setMessageList] = useState(dummyChats);
+  const [messageList, setMessageList] = useState(userList);
   const inputRef = useRef();
 
   const [message, setMessage] = useState('');
